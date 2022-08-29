@@ -11,7 +11,7 @@ import static org.apache.http.HttpStatus.*;
 
 import java.util.HashMap;
 
-public class UserInfoTests {
+public class UserOrdersTests {
 
     UserBuilder userBuilder = new UserBuilder();
     static HashMap<String, String> userData = new RandomData().randomCredentials();
