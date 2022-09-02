@@ -54,7 +54,6 @@ public class OrderCreateTests {
     @Test
     public void createOrderNoIngredient() {
         List<String> noIngredient = new ArrayList<>();
-        noIngredient.add("");
         String message = userBuilder.createOrderErrorMessage(noIngredient,data.get("token"));
         Assert.assertEquals("Ingredient ids must be provided",message);
     }
@@ -62,7 +61,6 @@ public class OrderCreateTests {
     @Test
     public void createOrderNoIngredientResponseCode() {
         List<String> noIngredient = new ArrayList<>();
-        noIngredient.add("");
         Response response = userBuilder.createOrderResponse(noIngredient,data.get("token"));
         Assert.assertEquals(SC_BAD_REQUEST,response.statusCode());
     }

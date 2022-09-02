@@ -32,8 +32,7 @@ public class UserBuilder {
     @Step("Создание учетной записи пользователя через запрос POST /api/auth/register")
     public String getTokenAfterCreateUser(String email, String password, String name) {
         Response response = new PostCreateUser().UserCreateReponse(new CreateUserRequest(email, password, name));
-        JsonPath js = new JsonPath(response.getBody().asString());
-        return js.getString("accessToken");
+        return response.body().jsonPath().getString("accessToken");
     }
 
     @Step("Создание учетной записи пользователя с генерированным учетными данными через запрос POST /api/auth/register")
@@ -102,8 +101,7 @@ public class UserBuilder {
         createOrderRequest.setIngredients(ingredients);
         Response response = new PostCreateOrder().OrderCreateReponse(createOrderRequest, accessToken);
         System.out.println(response.asString());
-        JsonPath js = new JsonPath(response.getBody().asString());
-        return js.getString("message");
+        return response.body().jsonPath().getString("message");
     }
 
     @Step("Изменение данных пользователя через запрос POST /api/orders")
