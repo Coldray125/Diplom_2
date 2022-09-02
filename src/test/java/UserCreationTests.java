@@ -1,6 +1,7 @@
 import Pojo.response.CreateUserResponse;
 import builders.UserBuilder;
 import generator.RandomData;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
 import org.junit.Assert;
@@ -30,6 +31,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Cоздание уникального пользователя")
     public void validUserCreate() {
         CreateUserResponse userBody = userBuilder.createUserBody(
                 userData.get("email"),
@@ -39,6 +41,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ответа на создание уникального пользователя")
     public void validUserCreateResponseCode() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
