@@ -11,7 +11,7 @@ import static org.apache.http.HttpStatus.SC_ACCEPTED;
 
 public class DeleteUser {
 
-    @Step("Отправка запроса на endpoint DELETE /api/auth/login для авторизации учетной записи пользователя")
+    @Step("Отправка запроса на endpoint DELETE /api/auth/login для удаления учетной записи пользователя")
     public Response UserDelete(String accessToken) {
         return given()
                 .spec(BurgerURLToken(accessToken))

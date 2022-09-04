@@ -9,7 +9,7 @@ import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class GetIngredients {
-    @Step("Отправка запроса на endpoint GET /api/ingredients для получения списка ингридиентов")
+    @Step("Отправка запроса на endpoint GET /api/ingredients для получения списка ингредиентов")
     public Response IngredientsRequest() {
         return given()
                 .spec(BurgerURL())

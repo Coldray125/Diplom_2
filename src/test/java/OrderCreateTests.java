@@ -1,6 +1,7 @@
 import Pojo.response.CreateOrderResponse;
 import builders.UserBuilder;
 import generator.RandomData;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.After;
@@ -36,6 +37,7 @@ public class OrderCreateTests {
     }
 
     @Test
+    @DisplayName("Проверка создания заказа авторизованным пользователем")
     public void createOrderAuthUser() {
         userBuilder.authUserBody(
                 data.get("email"),
@@ -46,12 +48,14 @@ public class OrderCreateTests {
     }
 
     @Test
+    @DisplayName("Проверка создания заказа не авторизованным пользователем")
     public void createOrderNoAuthUser() {
-        CreateOrderResponse createOrderResponse = userBuilder.createOrderBody(ingredient,data.get("token"));
+        CreateOrderResponse createOrderResponse = userBuilder.createOrderBody(ingredient,"");
         Assert.assertEquals("false",createOrderResponse.getSuccess());
     }
 
     @Test
+    @DisplayName("Проверка создания заказа без ингредиентов")
     public void createOrderNoIngredient() {
         List<String> noIngredient = new ArrayList<>();
         String message = userBuilder.createOrderErrorMessage(noIngredient,data.get("token"));
@@ -59,6 +63,7 @@ public class OrderCreateTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ответа создания заказа без ингредиентов")
     public void createOrderNoIngredientResponseCode() {
         List<String> noIngredient = new ArrayList<>();
         Response response = userBuilder.createOrderResponse(noIngredient,data.get("token"));
@@ -66,6 +71,7 @@ public class OrderCreateTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ответа создания заказа с неверным хешем ингредиента")
     public void createOrderWrongIngredient() {
         List<String> noIngredient = new ArrayList<>();
         noIngredient.add(RandomStringUtils.randomNumeric(8));

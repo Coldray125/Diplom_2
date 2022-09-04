@@ -41,7 +41,7 @@ public class UserCreationTests {
     }
 
     @Test
-    @DisplayName("Проверка кода ответа на создание уникального пользователя")
+    @DisplayName("Проверка кода ответа после создание уникального пользователя")
     public void validUserCreateResponseCode() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
@@ -51,6 +51,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка текста ошибки после создания пользователя с незаполненным именем")
     public void noNameError() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
@@ -60,6 +61,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ошибки после создания пользователя с незаполненным именем")
     public void noNameErrorResponseCode() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
@@ -69,6 +71,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка текста ошибки после создания пользователя с незаполненным паролем")
     public void noPasswordError() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
@@ -78,6 +81,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ошибки после создания пользователя с незаполненным паролем")
     public void noPasswordErrorResponseCode() {
         Response response = userBuilder.createUserResponse(
                 userData.get("email"),
@@ -87,6 +91,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка текста ошибки после создания пользователя с незаполненной почтой")
     public void noEmailError() {
         Response response = userBuilder.createUserResponse(
                 "",
@@ -96,6 +101,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ошибки после создания пользователя с незаполненной почтой")
     public void noEmailErrorResponseCode() {
         Response response = userBuilder.createUserResponse(
                 "",
@@ -105,6 +111,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка текста ошибки после создания пользователя , который уже зарегистрирован")
     public void existsUserError() {
         userBuilder.createUserResponse(
                 userData.get("email"),
@@ -120,6 +127,7 @@ public class UserCreationTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ошибки после создания пользователя , который уже зарегистрирован")
     public void existsUserErrorResponseCode() {
         userBuilder.createUserResponse(
                 userData.get("email"),

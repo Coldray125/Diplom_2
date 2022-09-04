@@ -1,6 +1,7 @@
 import Pojo.response.AuthUserResponse;
 import builders.UserBuilder;
 import generator.RandomData;
+import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.AfterClass;
 import org.junit.Assert;
@@ -32,6 +33,7 @@ public class UserAuthTests {
     }
 
     @Test
+    @DisplayName("Проверка логина пользователя")
     public void validAuth() {
         AuthUserResponse userAuthBody = userBuilder.authUserBody(userData.get("email"),
                 userData.get("password"),
@@ -40,6 +42,7 @@ public class UserAuthTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ответа после логина пользователя")
     public void validAuthResponseCode() {
         Response response = userBuilder.AuthUserResponse(userData.get("email"),
                 userData.get("password"),
@@ -48,6 +51,7 @@ public class UserAuthTests {
     }
 
     @Test
+    @DisplayName("Проверка текста ответа после логина пользователя с неконкретными авторизационными данными")
     public void wrongAuth() {
         Response response = userBuilder.AuthUserResponse(wrongUserData.get("email"),
                 wrongUserData.get("password"),
@@ -56,6 +60,7 @@ public class UserAuthTests {
     }
 
     @Test
+    @DisplayName("Проверка кода ответа после логина пользователя с неконкретными авторизационными данными")
     public void wrongAuthResponseCode() {
         Response response = userBuilder.AuthUserResponse(wrongUserData.get("email"),
                 wrongUserData.get("password"),
