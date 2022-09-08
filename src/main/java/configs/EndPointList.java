@@ -1,9 +1,9 @@
 package configs;
 
-public interface EndPointList {
-    String USER_CREATE = "/api/auth/register";
-    String USER_AUTH = "/api/auth/login";
-    String USER_INFO ="/api/auth/user";
-    String ORDER = "/api/orders";
-    String INGRIDIENTS = "/api/ingredients";
+public class EndPointList {
+    public static final String  USER_CREATE = "/api/auth/register";
+    public static final String USER_AUTH = "/api/auth/login";
+    public static final String USER_INFO ="/api/auth/user";
+    public static final String ORDER = "/api/orders";
+    public static final String INGRIDIENTS = "/api/ingredients";
 }

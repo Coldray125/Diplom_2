@@ -5,7 +5,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class Specification {
 
-    static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
+    public static final String BASE_URL = "https://stellarburgers.nomoreparties.site/";
 
     public static RequestSpecification BurgerURL(){
         return new RequestSpecBuilder()

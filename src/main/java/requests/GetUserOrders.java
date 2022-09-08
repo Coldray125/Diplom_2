@@ -1,12 +1,11 @@
 package requests;
 
-import Pojo.response.UserOrdersResponse;
+import pojo.response.UserOrdersResponse;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 
 import static configs.EndPointList.ORDER;
 import static configs.Specification.BurgerURLToken;
-import static configs.Specification.BurgerURLTokenJSON;
 import static io.restassured.RestAssured.given;
 
 public class GetUserOrders {

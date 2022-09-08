@@ -1,4 +1,4 @@
-package Pojo.request;
+package pojo.request;
 
 public class AuthUserRequest {
 

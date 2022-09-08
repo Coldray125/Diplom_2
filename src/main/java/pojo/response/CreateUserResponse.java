@@ -1,4 +1,4 @@
-package Pojo.response;
+package pojo.response;
 
 public class CreateUserResponse {
     private String refreshToken;

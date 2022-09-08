@@ -1,5 +1,5 @@
-import Pojo.response.CreateOrderResponse;
-import Pojo.response.UserOrdersResponse;
+import pojo.response.CreateOrderResponse;
+import pojo.response.UserOrdersResponse;
 import builders.UserBuilder;
 import generator.RandomData;
 import io.qameta.allure.junit4.DisplayName;

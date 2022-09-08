@@ -5,7 +5,6 @@ import io.restassured.response.Response;
 
 import static configs.EndPointList.INGRIDIENTS;
 import static configs.Specification.BurgerURL;
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 
 public class GetIngredients {

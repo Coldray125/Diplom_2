@@ -1,6 +1,6 @@
 package requests;
 
-import Pojo.response.CreateUserResponse;
+import pojo.response.CreateUserResponse;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 

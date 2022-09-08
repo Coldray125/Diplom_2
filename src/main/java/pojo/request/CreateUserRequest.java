@@ -1,6 +1,6 @@
-package Pojo.request;
+package pojo.request;
 
-public class EditUserRequest {
+public class CreateUserRequest {
 
     private String email;
     private String password;
@@ -30,12 +30,12 @@ public class EditUserRequest {
         this.name = name;
     }
 
-    public EditUserRequest(String email, String password, String name) {
+    public CreateUserRequest(String email, String password, String name) {
         this.email = email;
         this.password = password;
         this.name = name;
     }
 
-    public EditUserRequest() {
+    public CreateUserRequest() {
     }
 }

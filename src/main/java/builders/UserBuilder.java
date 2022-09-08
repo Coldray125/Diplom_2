@@ -1,13 +1,12 @@
 package builders;
 
-import Pojo.request.AuthUserRequest;
-import Pojo.request.CreateOrderRequest;
-import Pojo.request.CreateUserRequest;
-import Pojo.request.EditUserRequest;
-import Pojo.response.*;
+import pojo.request.AuthUserRequest;
+import pojo.request.CreateOrderRequest;
+import pojo.request.CreateUserRequest;
+import pojo.request.EditUserRequest;
+import pojo.response.*;
 import generator.RandomData;
 import io.qameta.allure.Step;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import requests.*;
 

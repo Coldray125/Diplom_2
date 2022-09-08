@@ -1,7 +1,7 @@
 package requests;
 
-import Pojo.request.EditUserRequest;
-import Pojo.response.EditUserResponse;
+import pojo.request.EditUserRequest;
+import pojo.response.EditUserResponse;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 

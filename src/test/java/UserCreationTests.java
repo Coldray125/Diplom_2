@@ -1,4 +1,4 @@
-import Pojo.response.CreateUserResponse;
+import pojo.response.CreateUserResponse;
 import builders.UserBuilder;
 import generator.RandomData;
 import io.qameta.allure.junit4.DisplayName;
